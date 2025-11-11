@@ -32,13 +32,11 @@
         <!-- Quarkus Core -->
         <dependency>
             <groupId>io.quarkus</groupId>
-            <artifactId>quarkus-rest</artifactId>
-            <version>${quarkus.platform.version}</version>
+            <artifactId>quarkus-resteasy-reactive-jackson</artifactId>
         </dependency>
         <dependency>
             <groupId>io.quarkus</groupId>
             <artifactId>quarkus-arc</artifactId>
-            <version>${quarkus.platform.version}</version>
         </dependency>
 
         <!-- VULNERABLE DEPENDENCIES - For Dependabot Testing -->
