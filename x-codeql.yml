@@ -1,0 +1,45 @@
+name: CodeQL Java (Quarkus)
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  schedule:
+    - cron: '11 11 * * 6'
+        
+jobs:
+  analyze:
+    name: Analisar código
+    runs-on: ubuntu-latest
+    permissions:
+      security-events: write
+      packages: read
+      actions: read
+      contents: read
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Configura o JDK
+      uses: actions/setup-java@v4
+      with:
+        distribution: 'temurin'
+        java-version: '21'
+        cache: 'maven'
+
+    - name: Inicializa o CodeQL
+      uses: github/codeql-action/init@v3
+      with:
+        languages: java-kotlin
+        build-mode: none
+
+    - name: Build do projeto
+      working-directory: java_project
+      run: mvn clean compile -DskipTests
+        
+    - name: Executar a Análise do CodeQL
+      uses: github/codeql-action/analyze@v3
+      with:
+        category: "/language:java"

@@ -1,0 +1,562 @@
+Run github/codeql-action/analyze@v3
+  with:
+    category: /language:java
+    output: ../results
+    upload: always
+    skip-queries: false
+    checkout_path: /home/runner/work/ogubr/ogubr
+    upload-database: true
+    wait-for-processing: true
+    token: ***
+    matrix: null
+    expect-error: false
+  env:
+    CODEQL_ACTION_FEATURE_MULTI_LANGUAGE: false
+    CODEQL_ACTION_FEATURE_SANDWICH: false
+    CODEQL_ACTION_FEATURE_SARIF_COMBINE: true
+    CODEQL_ACTION_FEATURE_WILL_UPLOAD: true
+    CODEQL_ACTION_VERSION: 3.31.2
+    JOB_RUN_UUID: be239d0f-f3ad-4af7-8e7e-99f637532a26
+    CODEQL_ACTION_INIT_HAS_RUN: true
+    CODEQL_ACTION_ANALYSIS_KEY: .github/workflows/x-codeql.yml:analyze
+    CODEQL_WORKFLOW_STARTED_AT: 2025-11-01T11:15:31.569Z
+    CODEQL_RAM: 6920
+    CODEQL_THREADS: 2
+    JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.9-10/x64
+    JAVA_HOME_21_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.9-10/x64
+    CODEQL_ACTION_AUTOBUILD_DID_COMPLETE_SUCCESSFULLY: true
+While resolving threads, found a cgroup CPUs file with 2 CPUs in /sys/fs/cgroup/cpuset.cpus.effective.
+Not performing diff-informed analysis because we are not analyzing a pull request.
+Finalizing java
+  /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/codeql database finalize --finalize-dataset --threads=2 --ram=6920 /home/runner/work/_temp/codeql_databases/java
+  Running pre-finalize script /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/java/tools/pre-finalize.sh in /home/runner/work/ogubr/ogubr.
+  Running command in /home/runner/work/ogubr/ogubr: [/opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/java/tools/pre-finalize.sh]
+  [2025-11-01 11:18:25] [build-stderr] Scanning for files in /home/runner/work/ogubr/ogubr...
+  [2025-11-01 11:18:25] [build-stderr] /home/runner/work/_temp/codeql_databases/java: Indexing files in in /home/runner/work/ogubr/ogubr...
+  [2025-11-01 11:18:25] [build-stderr] Running command in /home/runner/work/ogubr/ogubr: [/opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/xml/tools/index-files.sh, /home/runner/work/_temp/codeql_databases/java/working/files-to-index9644952031006086551.list]
+  [2025-11-01 11:18:26] [build-stdout] [2025-11-01 11:18:26] [build-stdout] [2025-11-01 11:18:26] [XMLExtractor] Processed 8 files in 368 ms; produced 0 bytes of compressed TRAP
+  [2025-11-01 11:18:26] [build-stdout] [2025-11-01 11:18:26] [build-stdout] 11:18:26.430 [main] INFO com.semmle.cli.SimpleExtractor.Stats -- Processed 8 files in 368 ms; produced 0 bytes of compressed TRAP
+  [2025-11-01 11:18:27] [build-stderr] Scanning for files in /home/runner/work/ogubr/ogubr...
+  [2025-11-01 11:18:27] [build-stderr] /home/runner/work/_temp/codeql_databases/java: Indexing files in in /home/runner/work/ogubr/ogubr...
+  [2025-11-01 11:18:27] [build-stderr] Running command in /home/runner/work/ogubr/ogubr: [/opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/properties/tools/index-files.sh, /home/runner/work/_temp/codeql_databases/java/working/files-to-index4255816187987061729.list]
+  [2025-11-01 11:18:28] [build-stdout] [2025-11-01 11:18:28] [build-stdout] [2025-11-01 11:18:28] [PropertiesExtractor] Processed 37 files in 226 ms; produced 0 bytes of compressed TRAP
+  Pre-finalize script /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/java/tools/pre-finalize.sh completed in 5384 ms.
+  Running TRAP import for CodeQL database at /home/runner/work/_temp/codeql_databases/java...
+  Importing TRAP files
+  Merging relations
+  Finished writing database (relations: 1.97 MiB; string pool: 5.53 MiB).
+  TRAP import complete (6.5s).
+  Finished zipping source archive (73.21 KiB).
+Running queries for java
+  /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/codeql database run-queries --ram=6920 --threads=2 --expect-discarded-cache /home/runner/work/_temp/codeql_databases/java --min-disk-free=1024 -v
+  Writing logs to /home/runner/work/_temp/codeql_databases/java/log/database-run-queries-20251101.111837.093.log.
+  Stringpool size measured as 5800362
+  Writing logs to /home/runner/work/_temp/codeql_databases/java/log/execute-queries-20251101.111838.067.log.
+  Recording pack reference codeql/java-queries at /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2.
+  Compiling in one thread due to RAM limits.
+  [1/79] Loaded /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-312/CleartextStorageCookie.qlx.
+  [2/79] Loaded /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-780/RsaWithoutOaep.qlx.
+  [3/79] Loaded /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-020/OverlyLargeRange.qlx.
+  [4/79] Loaded /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-330/InsecureRandomness.qlx.
+  [5/79] Loaded /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-326/InsufficientKeySize.qlx.
+  [6/79] Loaded /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-917/OgnlInjection.qlx.
+  [7/79] Loaded /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-927/ImplicitPendingIntents.qlx.
+  [8/79] Loaded /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-338/JHipsterGeneratedPRNG.qlx.
+  [9/79] Loaded /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-113/NettyResponseSplitting.qlx.
+  [10/79] Loaded /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-113/ResponseSplitting.qlx.
+  [11/79] Loaded /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-601/UrlRedirect.qlx.
+  [12/79] Loaded /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-829/InsecureDependencyResolution.qlx.
+  [13/79] Loaded /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-078/ExecTainted.qlx.
+  [14/79] Loaded /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-295/ImproperWebViewCertificateValidation.qlx.
+  [15/79] Loaded /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-295/InsecureTrustManager.qlx.
+  [16/79] Loaded /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-643/XPathInjection.qlx.
+  [17/79] Loaded /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-079/XSS.qlx.
+  [18/79] Loaded /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-089/SqlTainted.qlx.
+  [19/79] Loaded /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-489/DebuggableAttributeEnabled.qlx.
+  [20/79] Loaded /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-489/WebviewDebuggingEnabled.qlx.
+  [21/79] Loaded /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-522/InsecureLdapAuth.qlx.
+  [22/79] Loaded /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-287/AndroidInsecureLocalAuthentication.qlx.
+  [23/79] Loaded /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-022/ZipSlip.qlx.
+  [24/79] Loaded /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-022/TaintedPath.qlx.
+  [25/79] Loaded /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-614/InsecureCookie.qlx.
+  [26/79] Loaded /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-940/AndroidIntentRedirection.qlx.
+  [27/79] Loaded /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-347/MissingJWTSignatureCheck.qlx.
+  [28/79] Loaded /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-470/FragmentInjectionInPreferenceActivity.qlx.
+  [29/79] Loaded /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-470/FragmentInjection.qlx.
+  [30/79] Loaded /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-732/ReadingFromWorldWritableFile.qlx.
+  [31/79] Loaded /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-441/UnsafeContentUriResolution.qlx.
+  [32/79] Loaded /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-352/SpringCSRFProtection.qlx.
+  [33/79] Loaded /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-926/ImplicitlyExportedAndroidComponent.qlx.
+  [34/79] Loaded /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-552/UrlForward.qlx.
+  [35/79] Loaded /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-730/ReDoS.qlx.
+  [36/79] Loaded /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-730/PolynomialReDoS.qlx.
+  [37/79] Loaded /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-730/RegexInjection.qlx.
+  [38/79] Loaded /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-681/NumericCastTainted.qlx.
+  [39/79] Loaded /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-094/InsecureBeanValidation.qlx.
+  [40/79] Loaded /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-094/JexlInjection.qlx.
+  [41/79] Loaded /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-094/TemplateInjection.qlx.
+  [42/79] Loaded /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-094/SpelInjection.qlx.
+  [43/79] Loaded /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-094/MvelInjection.qlx.
+  [44/79] Loaded /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-094/GroovyInjection.qlx.
+  [45/79] Loaded /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-266/IntentUriPermissionManipulation.qlx.
+  [46/79] Loaded /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-502/UnsafeDeserialization.qlx.
+  [47/79] Loaded /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-200/SpringBootActuators.qlx.
+  [48/79] Loaded /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-200/SpringBootActuatorsConfig/SpringBootActuatorsConfig.qlx.
+  [49/79] Loaded /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-335/PredictableSeed.qlx.
+  [50/79] Loaded /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-074/XsltInjection.qlx.
+  [51/79] Loaded /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-074/JndiInjection.qlx.
+  [52/79] Loaded /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-023/PartialPathTraversalFromRemote.qlx.
+  [53/79] Loaded /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-134/ExternallyControlledFormatString.qlx.
+  [54/79] Loaded /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-327/BrokenCryptoAlgorithm.qlx.
+  [55/79] Loaded /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-918/RequestForgery.qlx.
+  [56/79] Loaded /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-925/ImproperIntentVerification.qlx.
+  [57/79] Loaded /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-807/TaintedPermissionsCheck.qlx.
+  [58/79] Loaded /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-297/UnsafeHostnameVerification.qlx.
+  [59/79] Loaded /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-090/LdapInjection.qlx.
+  [60/79] Loaded /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-1204/StaticInitializationVector.qlx.
+  [61/79] Loaded /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-209/SensitiveDataExposureThroughErrorMessage.qlx.
+  [62/79] Loaded /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-209/StackTraceExposure.qlx.
+  [63/79] Loaded /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-1104/MavenPomDependsOnBintray.qlx.
+  [64/79] Loaded /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-611/XXE.qlx.
+  [65/79] Loaded /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Likely Bugs/Arithmetic/InformationLoss.qlx.
+  [66/79] Loaded /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Diagnostics/ExtractionWarnings.qlx.
+  [67/79] Loaded /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Diagnostics/SuccessfullyExtractedFiles.qlx.
+  [68/79] Loaded /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Diagnostics/ExtractionErrors.qlx.
+  [69/79] Loaded /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Telemetry/DatabaseQualityDiagnostics.qlx.
+  [70/79] Loaded /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Metrics/Summaries/LinesOfCodeJava.qlx.
+  [71/79] Loaded /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Metrics/Summaries/LinesOfCodeKotlin.qlx.
+  [72/79] Loaded /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Metrics/Summaries/LinesOfCode.qlx.
+  [73/79] Loaded /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Telemetry/SupportedExternalTaint.qlx.
+  [74/79] Loaded /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Telemetry/SupportedExternalApis.qlx.
+  [75/79] Loaded /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Telemetry/UnsupportedExternalAPIs.qlx.
+  [76/79] Loaded /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Telemetry/ExternalLibraryUsage.qlx.
+  [77/79] Loaded /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Telemetry/ExtractorInformation.qlx.
+  [78/79] Loaded /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Telemetry/SupportedExternalSinks.qlx.
+  [79/79] Loaded /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Telemetry/SupportedExternalSources.qlx.
+  Starting evaluation of codeql/java-queries/Diagnostics/ExtractionErrors.ql.
+  Starting evaluation of codeql/java-queries/Diagnostics/ExtractionWarnings.ql.
+  Starting evaluation of codeql/java-queries/Diagnostics/SuccessfullyExtractedFiles.ql.
+  [1/79 eval 215ms] Evaluation done; writing results to codeql/java-queries/Diagnostics/ExtractionWarnings.bqrs.
+  [2/79 eval 402ms] Evaluation done; writing results to codeql/java-queries/Diagnostics/ExtractionErrors.bqrs.
+  Starting evaluation of codeql/java-queries/Likely Bugs/Arithmetic/InformationLoss.ql.
+  Starting evaluation of codeql/java-queries/Metrics/Summaries/LinesOfCode.ql.
+  Starting evaluation of codeql/java-queries/Metrics/Summaries/LinesOfCodeJava.ql.
+  [3/79 eval 23ms] Evaluation done; writing results to codeql/java-queries/Likely Bugs/Arithmetic/InformationLoss.bqrs.
+  Starting evaluation of codeql/java-queries/Metrics/Summaries/LinesOfCodeKotlin.ql.
+  Starting evaluation of codeql/java-queries/Security/CWE/CWE-020/OverlyLargeRange.ql.
+  [4/79 eval 2.1s] Evaluation done; writing results to codeql/java-queries/Metrics/Summaries/LinesOfCodeKotlin.bqrs.
+  [5/79 eval 2.9s] Evaluation done; writing results to codeql/java-queries/Metrics/Summaries/LinesOfCode.bqrs.
+  [6/79 eval 2.9s] Evaluation done; writing results to codeql/java-queries/Metrics/Summaries/LinesOfCodeJava.bqrs.
+  [7/79 eval 4.1s] Evaluation done; writing results to codeql/java-queries/Diagnostics/SuccessfullyExtractedFiles.bqrs.
+  Starting evaluation of codeql/java-queries/Security/CWE/CWE-022/TaintedPath.ql.
+  Starting evaluation of codeql/java-queries/Security/CWE/CWE-022/ZipSlip.ql.
+  Starting evaluation of codeql/java-queries/Security/CWE/CWE-023/PartialPathTraversalFromRemote.ql.
+  Starting evaluation of codeql/java-queries/Security/CWE/CWE-074/JndiInjection.ql.
+  [8/79 eval 11.7s] Evaluation done; writing results to codeql/java-queries/Security/CWE/CWE-020/OverlyLargeRange.bqrs.
+  [9/79 eval 1.7s] Evaluation done; writing results to codeql/java-queries/Security/CWE/CWE-022/ZipSlip.bqrs.
+  [10/79 eval 1.7s] Evaluation done; writing results to codeql/java-queries/Security/CWE/CWE-023/PartialPathTraversalFromRemote.bqrs.
+  [11/79 eval 1.8s] Evaluation done; writing results to codeql/java-queries/Security/CWE/CWE-074/JndiInjection.bqrs.
+  Starting evaluation of codeql/java-queries/Security/CWE/CWE-074/XsltInjection.ql.
+  [12/79 eval 8.1s] Evaluation done; writing results to codeql/java-queries/Security/CWE/CWE-022/TaintedPath.bqrs.
+  Starting evaluation of codeql/java-queries/Security/CWE/CWE-078/ExecTainted.ql.
+  [13/79 eval 108ms] Evaluation done; writing results to codeql/java-queries/Security/CWE/CWE-074/XsltInjection.bqrs.
+  Starting evaluation of codeql/java-queries/Security/CWE/CWE-079/XSS.ql.
+  [14/79 eval 229ms] Evaluation done; writing results to codeql/java-queries/Security/CWE/CWE-078/ExecTainted.bqrs.
+  [15/79 eval 179ms] Evaluation done; writing results to codeql/java-queries/Security/CWE/CWE-079/XSS.bqrs.
+  Starting evaluation of codeql/java-queries/Security/CWE/CWE-089/SqlTainted.ql.
+  Starting evaluation of codeql/java-queries/Security/CWE/CWE-090/LdapInjection.ql.
+  [16/79 eval 81ms] Evaluation done; writing results to codeql/java-queries/Security/CWE/CWE-090/LdapInjection.bqrs.
+  Starting evaluation of codeql/java-queries/Security/CWE/CWE-094/GroovyInjection.ql.
+  [17/79 eval 23ms] Evaluation done; writing results to codeql/java-queries/Security/CWE/CWE-094/GroovyInjection.bqrs.
+  Starting evaluation of codeql/java-queries/Security/CWE/CWE-094/InsecureBeanValidation.ql.
+  [18/79 eval 219ms] Evaluation done; writing results to codeql/java-queries/Security/CWE/CWE-089/SqlTainted.bqrs.
+  Starting evaluation of codeql/java-queries/Security/CWE/CWE-094/JexlInjection.ql.
+  [19/79 eval 127ms] Evaluation done; writing results to codeql/java-queries/Security/CWE/CWE-094/InsecureBeanValidation.bqrs.
+  Starting evaluation of codeql/java-queries/Security/CWE/CWE-094/MvelInjection.ql.
+  [20/79 eval 43ms] Evaluation done; writing results to codeql/java-queries/Security/CWE/CWE-094/JexlInjection.bqrs.
+  Starting evaluation of codeql/java-queries/Security/CWE/CWE-094/SpelInjection.ql.
+  [21/79 eval 97ms] Evaluation done; writing results to codeql/java-queries/Security/CWE/CWE-094/SpelInjection.bqrs.
+  Starting evaluation of codeql/java-queries/Security/CWE/CWE-094/TemplateInjection.ql.
+  [22/79 eval 297ms] Evaluation done; writing results to codeql/java-queries/Security/CWE/CWE-094/MvelInjection.bqrs.
+  Starting evaluation of codeql/java-queries/Security/CWE/CWE-1104/MavenPomDependsOnBintray.ql.
+  Starting evaluation of codeql/java-queries/Security/CWE/CWE-113/NettyResponseSplitting.ql.
+  [23/79 eval 15ms] Evaluation done; writing results to codeql/java-queries/Security/CWE/CWE-1104/MavenPomDependsOnBintray.bqrs.
+  Starting evaluation of codeql/java-queries/Security/CWE/CWE-113/ResponseSplitting.ql.
+  [24/79 eval 12ms] Evaluation done; writing results to codeql/java-queries/Security/CWE/CWE-113/NettyResponseSplitting.bqrs.
+  [25/79 eval 268ms] Evaluation done; writing results to codeql/java-queries/Security/CWE/CWE-094/TemplateInjection.bqrs.
+  Starting evaluation of codeql/java-queries/Security/CWE/CWE-1204/StaticInitializationVector.ql.
+  [26/79 eval 14ms] Evaluation done; writing results to codeql/java-queries/Security/CWE/CWE-1204/StaticInitializationVector.bqrs.
+  Starting evaluation of codeql/java-queries/Security/CWE/CWE-134/ExternallyControlledFormatString.ql.
+  [27/79 eval 157ms] Evaluation done; writing results to codeql/java-queries/Security/CWE/CWE-113/ResponseSplitting.bqrs.
+  Starting evaluation of codeql/java-queries/Security/CWE/CWE-200/SpringBootActuators.ql.
+  [28/79 eval 73ms] Evaluation done; writing results to codeql/java-queries/Security/CWE/CWE-200/SpringBootActuators.bqrs.
+  Starting evaluation of codeql/java-queries/Security/CWE/CWE-200/SpringBootActuatorsConfig/SpringBootActuatorsConfig.ql.
+  [29/79 eval 64ms] Evaluation done; writing results to codeql/java-queries/Security/CWE/CWE-200/SpringBootActuatorsConfig/SpringBootActuatorsConfig.bqrs.
+  Starting evaluation of codeql/java-queries/Security/CWE/CWE-209/SensitiveDataExposureThroughErrorMessage.ql.
+  Starting evaluation of codeql/java-queries/Security/CWE/CWE-209/StackTraceExposure.ql.
+  [30/79 eval 521ms] Evaluation done; writing results to codeql/java-queries/Security/CWE/CWE-209/SensitiveDataExposureThroughErrorMessage.bqrs.
+  [31/79 eval 75ms] Evaluation done; writing results to codeql/java-queries/Security/CWE/CWE-209/StackTraceExposure.bqrs.
+  Starting evaluation of codeql/java-queries/Security/CWE/CWE-266/IntentUriPermissionManipulation.ql.
+  [32/79 eval 946ms] Evaluation done; writing results to codeql/java-queries/Security/CWE/CWE-134/ExternallyControlledFormatString.bqrs.
+  Starting evaluation of codeql/java-queries/Security/CWE/CWE-295/ImproperWebViewCertificateValidation.ql.
+  [33/79 eval 120ms] Evaluation done; writing results to codeql/java-queries/Security/CWE/CWE-266/IntentUriPermissionManipulation.bqrs.
+  Starting evaluation of codeql/java-queries/Security/CWE/CWE-287/AndroidInsecureLocalAuthentication.ql.
+  Starting evaluation of codeql/java-queries/Security/CWE/CWE-295/InsecureTrustManager.ql.
+  [34/79 eval 9ms] Evaluation done; writing results to codeql/java-queries/Security/CWE/CWE-287/AndroidInsecureLocalAuthentication.bqrs.
+  [35/79 eval 134ms] Evaluation done; writing results to codeql/java-queries/Security/CWE/CWE-295/ImproperWebViewCertificateValidation.bqrs.
+  Starting evaluation of codeql/java-queries/Security/CWE/CWE-297/UnsafeHostnameVerification.ql.
+  [36/79 eval 104ms] Evaluation done; writing results to codeql/java-queries/Security/CWE/CWE-297/UnsafeHostnameVerification.bqrs.
+  Starting evaluation of codeql/java-queries/Security/CWE/CWE-312/CleartextStorageCookie.ql.
+  [37/79 eval 108ms] Evaluation done; writing results to codeql/java-queries/Security/CWE/CWE-312/CleartextStorageCookie.bqrs.
+  Starting evaluation of codeql/java-queries/Security/CWE/CWE-326/InsufficientKeySize.ql.
+  [38/79 eval 352ms] Evaluation done; writing results to codeql/java-queries/Security/CWE/CWE-295/InsecureTrustManager.bqrs.
+  Starting evaluation of codeql/java-queries/Security/CWE/CWE-327/BrokenCryptoAlgorithm.ql.
+  [39/79 eval 112ms] Evaluation done; writing results to codeql/java-queries/Security/CWE/CWE-326/InsufficientKeySize.bqrs.
+  Starting evaluation of codeql/java-queries/Security/CWE/CWE-330/InsecureRandomness.ql.
+  [40/79 eval 152ms] Evaluation done; writing results to codeql/java-queries/Security/CWE/CWE-327/BrokenCryptoAlgorithm.bqrs.
+  Starting evaluation of codeql/java-queries/Security/CWE/CWE-335/PredictableSeed.ql.
+  [41/79 eval 34ms] Evaluation done; writing results to codeql/java-queries/Security/CWE/CWE-335/PredictableSeed.bqrs.
+  Starting evaluation of codeql/java-queries/Security/CWE/CWE-338/JHipsterGeneratedPRNG.ql.
+  [42/79 eval 82ms] Evaluation done; writing results to codeql/java-queries/Security/CWE/CWE-338/JHipsterGeneratedPRNG.bqrs.
+  Starting evaluation of codeql/java-queries/Security/CWE/CWE-347/MissingJWTSignatureCheck.ql.
+  [43/79 eval 223ms] Evaluation done; writing results to codeql/java-queries/Security/CWE/CWE-330/InsecureRandomness.bqrs.
+  Starting evaluation of codeql/java-queries/Security/CWE/CWE-352/SpringCSRFProtection.ql.
+  [44/79 eval 114ms] Evaluation done; writing results to codeql/java-queries/Security/CWE/CWE-347/MissingJWTSignatureCheck.bqrs.
+  Starting evaluation of codeql/java-queries/Security/CWE/CWE-441/UnsafeContentUriResolution.ql.
+  [45/79 eval 18ms] Evaluation done; writing results to codeql/java-queries/Security/CWE/CWE-441/UnsafeContentUriResolution.bqrs.
+  Starting evaluation of codeql/java-queries/Security/CWE/CWE-470/FragmentInjection.ql.
+  [46/79 eval 132ms] Evaluation done; writing results to codeql/java-queries/Security/CWE/CWE-352/SpringCSRFProtection.bqrs.
+  Starting evaluation of codeql/java-queries/Security/CWE/CWE-470/FragmentInjectionInPreferenceActivity.ql.
+  [47/79 eval 83ms] Evaluation done; writing results to codeql/java-queries/Security/CWE/CWE-470/FragmentInjection.bqrs.
+  Starting evaluation of codeql/java-queries/Security/CWE/CWE-489/DebuggableAttributeEnabled.ql.
+  Starting evaluation of codeql/java-queries/Security/CWE/CWE-489/WebviewDebuggingEnabled.ql.
+  [48/79 eval 58ms] Evaluation done; writing results to codeql/java-queries/Security/CWE/CWE-470/FragmentInjectionInPreferenceActivity.bqrs.
+  [49/79 eval 16ms] Evaluation done; writing results to codeql/java-queries/Security/CWE/CWE-489/DebuggableAttributeEnabled.bqrs.
+  Starting evaluation of codeql/java-queries/Security/CWE/CWE-502/UnsafeDeserialization.ql.
+  [50/79 eval 89ms] Evaluation done; writing results to codeql/java-queries/Security/CWE/CWE-489/WebviewDebuggingEnabled.bqrs.
+  Starting evaluation of codeql/java-queries/Security/CWE/CWE-522/InsecureLdapAuth.ql.
+  [51/79 eval 797ms] Evaluation done; writing results to codeql/java-queries/Security/CWE/CWE-502/UnsafeDeserialization.bqrs.
+  Starting evaluation of codeql/java-queries/Security/CWE/CWE-552/UrlForward.ql.
+  [52/79 eval 85ms] Evaluation done; writing results to codeql/java-queries/Security/CWE/CWE-522/InsecureLdapAuth.bqrs.
+  Starting evaluation of codeql/java-queries/Security/CWE/CWE-601/UrlRedirect.ql.
+  [53/79 eval 190ms] Evaluation done; writing results to codeql/java-queries/Security/CWE/CWE-601/UrlRedirect.bqrs.
+  Starting evaluation of codeql/java-queries/Security/CWE/CWE-611/XXE.ql.
+  [54/79 eval 136ms] Evaluation done; writing results to codeql/java-queries/Security/CWE/CWE-611/XXE.bqrs.
+  Starting evaluation of codeql/java-queries/Security/CWE/CWE-614/InsecureCookie.ql.
+  [55/79 eval 33ms] Evaluation done; writing results to codeql/java-queries/Security/CWE/CWE-614/InsecureCookie.bqrs.
+  Starting evaluation of codeql/java-queries/Security/CWE/CWE-643/XPathInjection.ql.
+  [56/79 eval 450ms] Evaluation done; writing results to codeql/java-queries/Security/CWE/CWE-552/UrlForward.bqrs.
+  Starting evaluation of codeql/java-queries/Security/CWE/CWE-681/NumericCastTainted.ql.
+  [57/79 eval 226ms] Evaluation done; writing results to codeql/java-queries/Security/CWE/CWE-643/XPathInjection.bqrs.
+  Starting evaluation of codeql/java-queries/Security/CWE/CWE-730/PolynomialReDoS.ql.
+  [58/79 eval 25ms] Evaluation done; writing results to codeql/java-queries/Security/CWE/CWE-730/PolynomialReDoS.bqrs.
+  Starting evaluation of codeql/java-queries/Security/CWE/CWE-730/ReDoS.ql.
+  [59/79 eval 53ms] Evaluation done; writing results to codeql/java-queries/Security/CWE/CWE-730/ReDoS.bqrs.
+  Starting evaluation of codeql/java-queries/Security/CWE/CWE-730/RegexInjection.ql.
+  [60/79 eval 289ms] Evaluation done; writing results to codeql/java-queries/Security/CWE/CWE-681/NumericCastTainted.bqrs.
+  Starting evaluation of codeql/java-queries/Security/CWE/CWE-732/ReadingFromWorldWritableFile.ql.
+  [61/79 eval 62ms] Evaluation done; writing results to codeql/java-queries/Security/CWE/CWE-730/RegexInjection.bqrs.
+  Starting evaluation of codeql/java-queries/Security/CWE/CWE-780/RsaWithoutOaep.ql.
+  [62/79 eval 41ms] Evaluation done; writing results to codeql/java-queries/Security/CWE/CWE-780/RsaWithoutOaep.bqrs.
+  Starting evaluation of codeql/java-queries/Security/CWE/CWE-807/TaintedPermissionsCheck.ql.
+  [63/79 eval 36ms] Evaluation done; writing results to codeql/java-queries/Security/CWE/CWE-807/TaintedPermissionsCheck.bqrs.
+  Starting evaluation of codeql/java-queries/Security/CWE/CWE-829/InsecureDependencyResolution.ql.
+  Starting evaluation of codeql/java-queries/Security/CWE/CWE-917/OgnlInjection.ql.
+  [64/79 eval 3ms] Evaluation done; writing results to codeql/java-queries/Security/CWE/CWE-829/InsecureDependencyResolution.bqrs.
+  [65/79 eval 63ms] Evaluation done; writing results to codeql/java-queries/Security/CWE/CWE-917/OgnlInjection.bqrs.
+  Starting evaluation of codeql/java-queries/Security/CWE/CWE-918/RequestForgery.ql.
+  Starting evaluation of codeql/java-queries/Security/CWE/CWE-925/ImproperIntentVerification.ql.
+  [66/79 eval 171ms] Evaluation done; writing results to codeql/java-queries/Security/CWE/CWE-732/ReadingFromWorldWritableFile.bqrs.
+  [67/79 eval 9ms] Evaluation done; writing results to codeql/java-queries/Security/CWE/CWE-925/ImproperIntentVerification.bqrs.
+  Starting evaluation of codeql/java-queries/Security/CWE/CWE-926/ImplicitlyExportedAndroidComponent.ql.
+  Starting evaluation of codeql/java-queries/Security/CWE/CWE-927/ImplicitPendingIntents.ql.
+  [68/79 eval 8ms] Evaluation done; writing results to codeql/java-queries/Security/CWE/CWE-926/ImplicitlyExportedAndroidComponent.bqrs.
+  [69/79 eval 105ms] Evaluation done; writing results to codeql/java-queries/Security/CWE/CWE-918/RequestForgery.bqrs.
+  Starting evaluation of codeql/java-queries/Security/CWE/CWE-940/AndroidIntentRedirection.ql.
+  [70/79 eval 152ms] Evaluation done; writing results to codeql/java-queries/Security/CWE/CWE-927/ImplicitPendingIntents.bqrs.
+  Starting evaluation of codeql/java-queries/Telemetry/DatabaseQualityDiagnostics.ql.
+  [71/79 eval 160ms] Evaluation done; writing results to codeql/java-queries/Security/CWE/CWE-940/AndroidIntentRedirection.bqrs.
+  Starting evaluation of codeql/java-queries/Telemetry/ExternalLibraryUsage.ql.
+  [72/79 eval 88ms] Evaluation done; writing results to codeql/java-queries/Telemetry/DatabaseQualityDiagnostics.bqrs.
+  Starting evaluation of codeql/java-queries/Telemetry/ExtractorInformation.ql.
+  Starting evaluation of codeql/java-queries/Telemetry/SupportedExternalApis.ql.
+  [73/79 eval 80ms] Evaluation done; writing results to codeql/java-queries/Telemetry/ExtractorInformation.bqrs.
+  Starting evaluation of codeql/java-queries/Telemetry/SupportedExternalSinks.ql.
+  Starting evaluation of codeql/java-queries/Telemetry/SupportedExternalSources.ql.
+  Starting evaluation of codeql/java-queries/Telemetry/SupportedExternalTaint.ql.
+  [74/79 eval 194ms] Evaluation done; writing results to codeql/java-queries/Telemetry/ExternalLibraryUsage.bqrs.
+  [75/79 eval 253ms] Evaluation done; writing results to codeql/java-queries/Telemetry/SupportedExternalSources.bqrs.
+  Starting evaluation of codeql/java-queries/Telemetry/UnsupportedExternalAPIs.ql.
+  [76/79 eval 332ms] Evaluation done; writing results to codeql/java-queries/Telemetry/SupportedExternalTaint.bqrs.
+  [77/79 eval 530ms] Evaluation done; writing results to codeql/java-queries/Telemetry/UnsupportedExternalAPIs.bqrs.
+  [78/79 eval 873ms] Evaluation done; writing results to codeql/java-queries/Telemetry/SupportedExternalApis.bqrs.
+  [79/79 eval 870ms] Evaluation done; writing results to codeql/java-queries/Telemetry/SupportedExternalSinks.bqrs.
+  Shutting down query evaluator.
+  Interpreting code scanning results for java
+  Writing logs to /home/runner/work/_temp/codeql_databases/java/log/database-interpret-results-20251101.111920.385.log.
+  Recording pack reference codeql/java-queries at /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2.
+  Resolving extensions
+  Interpreting /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-312/CleartextStorageCookie.ql...
+   ... found results file at /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-312/CleartextStorageCookie.bqrs.
+  Interpreting /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-780/RsaWithoutOaep.ql...
+   ... found results file at /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-780/RsaWithoutOaep.bqrs.
+  Interpreting /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-020/OverlyLargeRange.ql...
+   ... found results file at /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-020/OverlyLargeRange.bqrs.
+  Interpreting /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-330/InsecureRandomness.ql...
+   ... found results file at /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-330/InsecureRandomness.bqrs.
+  Interpreting /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-326/InsufficientKeySize.ql...
+   ... found results file at /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-326/InsufficientKeySize.bqrs.
+  Interpreting /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-917/OgnlInjection.ql...
+   ... found results file at /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-917/OgnlInjection.bqrs.
+  Interpreting /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-927/ImplicitPendingIntents.ql...
+   ... found results file at /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-927/ImplicitPendingIntents.bqrs.
+  Interpreting /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-338/JHipsterGeneratedPRNG.ql...
+   ... found results file at /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-338/JHipsterGeneratedPRNG.bqrs.
+  Interpreting /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-113/NettyResponseSplitting.ql...
+   ... found results file at /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-113/NettyResponseSplitting.bqrs.
+  Interpreting /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-113/ResponseSplitting.ql...
+   ... found results file at /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-113/ResponseSplitting.bqrs.
+  Interpreting /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-601/UrlRedirect.ql...
+   ... found results file at /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-601/UrlRedirect.bqrs.
+  Interpreting /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-829/InsecureDependencyResolution.ql...
+   ... found results file at /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-829/InsecureDependencyResolution.bqrs.
+  Interpreting /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-078/ExecTainted.ql...
+   ... found results file at /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-078/ExecTainted.bqrs.
+  Interpreting /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-295/ImproperWebViewCertificateValidation.ql...
+   ... found results file at /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-295/ImproperWebViewCertificateValidation.bqrs.
+  Interpreting /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-295/InsecureTrustManager.ql...
+   ... found results file at /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-295/InsecureTrustManager.bqrs.
+  Interpreting /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-643/XPathInjection.ql...
+   ... found results file at /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-643/XPathInjection.bqrs.
+  Interpreting /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-079/XSS.ql...
+   ... found results file at /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-079/XSS.bqrs.
+  Interpreting /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-089/SqlTainted.ql...
+   ... found results file at /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-089/SqlTainted.bqrs.
+  Interpreting /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-489/DebuggableAttributeEnabled.ql...
+   ... found results file at /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-489/DebuggableAttributeEnabled.bqrs.
+  Interpreting /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-489/WebviewDebuggingEnabled.ql...
+   ... found results file at /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-489/WebviewDebuggingEnabled.bqrs.
+  Interpreting /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-522/InsecureLdapAuth.ql...
+   ... found results file at /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-522/InsecureLdapAuth.bqrs.
+  Interpreting /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-287/AndroidInsecureLocalAuthentication.ql...
+   ... found results file at /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-287/AndroidInsecureLocalAuthentication.bqrs.
+  Interpreting /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-022/ZipSlip.ql...
+   ... found results file at /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-022/ZipSlip.bqrs.
+  Interpreting /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-022/TaintedPath.ql...
+   ... found results file at /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-022/TaintedPath.bqrs.
+  Interpreting /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-614/InsecureCookie.ql...
+   ... found results file at /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-614/InsecureCookie.bqrs.
+  Interpreting /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-940/AndroidIntentRedirection.ql...
+   ... found results file at /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-940/AndroidIntentRedirection.bqrs.
+  Interpreting /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-347/MissingJWTSignatureCheck.ql...
+   ... found results file at /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-347/MissingJWTSignatureCheck.bqrs.
+  Interpreting /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-470/FragmentInjectionInPreferenceActivity.ql...
+   ... found results file at /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-470/FragmentInjectionInPreferenceActivity.bqrs.
+  Interpreting /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-470/FragmentInjection.ql...
+   ... found results file at /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-470/FragmentInjection.bqrs.
+  Interpreting /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-732/ReadingFromWorldWritableFile.ql...
+   ... found results file at /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-732/ReadingFromWorldWritableFile.bqrs.
+  Interpreting /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-441/UnsafeContentUriResolution.ql...
+   ... found results file at /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-441/UnsafeContentUriResolution.bqrs.
+  Interpreting /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-352/SpringCSRFProtection.ql...
+   ... found results file at /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-352/SpringCSRFProtection.bqrs.
+  Interpreting /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-926/ImplicitlyExportedAndroidComponent.ql...
+   ... found results file at /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-926/ImplicitlyExportedAndroidComponent.bqrs.
+  Interpreting /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-552/UrlForward.ql...
+   ... found results file at /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-552/UrlForward.bqrs.
+  Interpreting /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-730/ReDoS.ql...
+   ... found results file at /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-730/ReDoS.bqrs.
+  Interpreting /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-730/PolynomialReDoS.ql...
+   ... found results file at /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-730/PolynomialReDoS.bqrs.
+  Interpreting /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-730/RegexInjection.ql...
+   ... found results file at /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-730/RegexInjection.bqrs.
+  Interpreting /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-681/NumericCastTainted.ql...
+   ... found results file at /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-681/NumericCastTainted.bqrs.
+  Interpreting /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-094/InsecureBeanValidation.ql...
+   ... found results file at /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-094/InsecureBeanValidation.bqrs.
+  Interpreting /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-094/JexlInjection.ql...
+   ... found results file at /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-094/JexlInjection.bqrs.
+  Interpreting /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-094/TemplateInjection.ql...
+   ... found results file at /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-094/TemplateInjection.bqrs.
+  Interpreting /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-094/SpelInjection.ql...
+   ... found results file at /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-094/SpelInjection.bqrs.
+  Interpreting /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-094/MvelInjection.ql...
+   ... found results file at /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-094/MvelInjection.bqrs.
+  Interpreting /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-094/GroovyInjection.ql...
+   ... found results file at /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-094/GroovyInjection.bqrs.
+  Interpreting /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-266/IntentUriPermissionManipulation.ql...
+   ... found results file at /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-266/IntentUriPermissionManipulation.bqrs.
+  Interpreting /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-502/UnsafeDeserialization.ql...
+   ... found results file at /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-502/UnsafeDeserialization.bqrs.
+  Interpreting /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-200/SpringBootActuators.ql...
+   ... found results file at /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-200/SpringBootActuators.bqrs.
+  Interpreting /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-200/SpringBootActuatorsConfig/SpringBootActuatorsConfig.ql...
+   ... found results file at /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-200/SpringBootActuatorsConfig/SpringBootActuatorsConfig.bqrs.
+  Interpreting /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-335/PredictableSeed.ql...
+   ... found results file at /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-335/PredictableSeed.bqrs.
+  Interpreting /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-074/XsltInjection.ql...
+   ... found results file at /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-074/XsltInjection.bqrs.
+  Interpreting /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-074/JndiInjection.ql...
+   ... found results file at /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-074/JndiInjection.bqrs.
+  Interpreting /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-023/PartialPathTraversalFromRemote.ql...
+   ... found results file at /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-023/PartialPathTraversalFromRemote.bqrs.
+  Interpreting /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-134/ExternallyControlledFormatString.ql...
+   ... found results file at /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-134/ExternallyControlledFormatString.bqrs.
+  Interpreting /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-327/BrokenCryptoAlgorithm.ql...
+   ... found results file at /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-327/BrokenCryptoAlgorithm.bqrs.
+  Interpreting /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-918/RequestForgery.ql...
+   ... found results file at /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-918/RequestForgery.bqrs.
+  Interpreting /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-925/ImproperIntentVerification.ql...
+   ... found results file at /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-925/ImproperIntentVerification.bqrs.
+  Interpreting /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-807/TaintedPermissionsCheck.ql...
+   ... found results file at /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-807/TaintedPermissionsCheck.bqrs.
+  Interpreting /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-297/UnsafeHostnameVerification.ql...
+   ... found results file at /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-297/UnsafeHostnameVerification.bqrs.
+  Interpreting /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-090/LdapInjection.ql...
+   ... found results file at /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-090/LdapInjection.bqrs.
+  Interpreting /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-1204/StaticInitializationVector.ql...
+   ... found results file at /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-1204/StaticInitializationVector.bqrs.
+  Interpreting /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-209/SensitiveDataExposureThroughErrorMessage.ql...
+   ... found results file at /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-209/SensitiveDataExposureThroughErrorMessage.bqrs.
+  Interpreting /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-209/StackTraceExposure.ql...
+   ... found results file at /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-209/StackTraceExposure.bqrs.
+  Interpreting /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-1104/MavenPomDependsOnBintray.ql...
+   ... found results file at /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-1104/MavenPomDependsOnBintray.bqrs.
+  Interpreting /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Security/CWE/CWE-611/XXE.ql...
+   ... found results file at /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-611/XXE.bqrs.
+  Interpreting /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Likely Bugs/Arithmetic/InformationLoss.ql...
+   ... found results file at /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Likely Bugs/Arithmetic/InformationLoss.bqrs.
+  Interpreting /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Diagnostics/ExtractionWarnings.ql...
+   ... found results file at /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Diagnostics/ExtractionWarnings.bqrs.
+  Interpreting /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Diagnostics/SuccessfullyExtractedFiles.ql...
+   ... found results file at /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Diagnostics/SuccessfullyExtractedFiles.bqrs.
+  Interpreting /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Diagnostics/ExtractionErrors.ql...
+   ... found results file at /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Diagnostics/ExtractionErrors.bqrs.
+  Interpreting /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Telemetry/DatabaseQualityDiagnostics.ql...
+   ... found results file at /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Telemetry/DatabaseQualityDiagnostics.bqrs.
+  Interpreting /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Metrics/Summaries/LinesOfCodeJava.ql...
+   ... found results file at /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Metrics/Summaries/LinesOfCodeJava.bqrs.
+  Interpreting /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Metrics/Summaries/LinesOfCodeKotlin.ql...
+   ... found results file at /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Metrics/Summaries/LinesOfCodeKotlin.bqrs.
+  Interpreting /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Metrics/Summaries/LinesOfCode.ql...
+   ... found results file at /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Metrics/Summaries/LinesOfCode.bqrs.
+  Interpreting /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Telemetry/SupportedExternalTaint.ql...
+   ... found results file at /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Telemetry/SupportedExternalTaint.bqrs.
+  Interpreting /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Telemetry/SupportedExternalApis.ql...
+   ... found results file at /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Telemetry/SupportedExternalApis.bqrs.
+  Interpreting /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Telemetry/UnsupportedExternalAPIs.ql...
+   ... found results file at /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Telemetry/UnsupportedExternalAPIs.bqrs.
+  Interpreting /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Telemetry/ExternalLibraryUsage.ql...
+   ... found results file at /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Telemetry/ExternalLibraryUsage.bqrs.
+  Interpreting /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Telemetry/ExtractorInformation.ql...
+   ... found results file at /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Telemetry/ExtractorInformation.bqrs.
+  Interpreting /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Telemetry/SupportedExternalSinks.ql...
+   ... found results file at /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Telemetry/SupportedExternalSinks.bqrs.
+  Interpreting /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/qlpacks/codeql/java-queries/1.8.2/Telemetry/SupportedExternalSources.ql...
+   ... found results file at /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Telemetry/SupportedExternalSources.bqrs.
+  Interpreted problem query "Cleartext storage of sensitive information in cookie" (java/cleartext-storage-in-cookie) at path /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-312/CleartextStorageCookie.bqrs.
+  Interpreted pathproblem query "Use of RSA algorithm without OAEP" (java/rsa-without-oaep) at path /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-780/RsaWithoutOaep.bqrs.
+  Interpreted problem query "Overly permissive regular expression range" (java/overly-large-range) at path /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-020/OverlyLargeRange.bqrs.
+  Interpreted pathproblem query "Insecure randomness" (java/insecure-randomness) at path /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-330/InsecureRandomness.bqrs.
+  Interpreted pathproblem query "Use of a cryptographic algorithm with insufficient key size" (java/insufficient-key-size) at path /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-326/InsufficientKeySize.bqrs.
+  Interpreted pathproblem query "OGNL Expression Language statement with user-controlled input" (java/ognl-injection) at path /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-917/OgnlInjection.bqrs.
+  Interpreted pathproblem query "Use of implicit PendingIntents" (java/android/implicit-pendingintents) at path /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-927/ImplicitPendingIntents.bqrs.
+  Interpreted problem query "Detect JHipster Generator Vulnerability CVE-2019-16303" (java/jhipster-prng) at path /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-338/JHipsterGeneratedPRNG.bqrs.
+  Interpreted problem query "Disabled Netty HTTP header validation" (java/netty-http-request-or-response-splitting) at path /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-113/NettyResponseSplitting.bqrs.
+  Interpreted pathproblem query "HTTP response splitting" (java/http-response-splitting) at path /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-113/ResponseSplitting.bqrs.
+  Interpreted pathproblem query "URL redirection from remote source" (java/unvalidated-url-redirection) at path /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-601/UrlRedirect.bqrs.
+  Interpreted problem query "Failure to use HTTPS or SFTP URL in Maven artifact upload/download" (java/maven/non-https-url) at path /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-829/InsecureDependencyResolution.bqrs.
+  Interpreted pathproblem query "Uncontrolled command line" (java/command-line-injection) at path /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-078/ExecTainted.bqrs.
+  Interpreted problem query "Android `WebView` that accepts all certificates" (java/improper-webview-certificate-validation) at path /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-295/ImproperWebViewCertificateValidation.bqrs.
+  Interpreted pathproblem query "`TrustManager` that accepts all certificates" (java/insecure-trustmanager) at path /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-295/InsecureTrustManager.bqrs.
+  Interpreted pathproblem query "XPath injection" (java/xml/xpath-injection) at path /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-643/XPathInjection.bqrs.
+  Interpreted pathproblem query "Cross-site scripting" (java/xss) at path /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-079/XSS.bqrs.
+  Interpreted pathproblem query "Query built from user-controlled sources" (java/sql-injection) at path /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-089/SqlTainted.bqrs.
+  Interpreted problem query "Android debuggable attribute enabled" (java/android/debuggable-attribute-enabled) at path /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-489/DebuggableAttributeEnabled.bqrs.
+  Interpreted pathproblem query "Android Webview debugging enabled" (java/android/webview-debugging-enabled) at path /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-489/WebviewDebuggingEnabled.bqrs.
+  Interpreted pathproblem query "Insecure LDAP authentication" (java/insecure-ldap-auth) at path /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-522/InsecureLdapAuth.bqrs.
+  Interpreted problem query "Insecure local authentication" (java/android/insecure-local-authentication) at path /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-287/AndroidInsecureLocalAuthentication.bqrs.
+  Interpreted pathproblem query "Arbitrary file access during archive extraction ("Zip Slip")" (java/zipslip) at path /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-022/ZipSlip.bqrs.
+  Interpreted pathproblem query "Uncontrolled data used in path expression" (java/path-injection) at path /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-022/TaintedPath.bqrs.
+  Interpreted problem query "Failure to use secure cookies" (java/insecure-cookie) at path /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-614/InsecureCookie.bqrs.
+  Interpreted pathproblem query "Android Intent redirection" (java/android/intent-redirection) at path /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-940/AndroidIntentRedirection.bqrs.
+  Interpreted pathproblem query "Missing JWT signature check" (java/missing-jwt-signature-check) at path /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-347/MissingJWTSignatureCheck.bqrs.
+  Interpreted problem query "Android fragment injection in PreferenceActivity" (java/android/fragment-injection-preference-activity) at path /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-470/FragmentInjectionInPreferenceActivity.bqrs.
+  Interpreted pathproblem query "Android fragment injection" (java/android/fragment-injection) at path /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-470/FragmentInjection.bqrs.
+  Interpreted problem query "Reading from a world writable file" (java/world-writable-file-read) at path /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-732/ReadingFromWorldWritableFile.bqrs.
+  Interpreted pathproblem query "Uncontrolled data used in content resolution" (java/android/unsafe-content-uri-resolution) at path /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-441/UnsafeContentUriResolution.bqrs.
+  Interpreted problem query "Disabled Spring CSRF protection" (java/spring-disabled-csrf-protection) at path /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-352/SpringCSRFProtection.bqrs.
+  Interpreted problem query "Implicitly exported Android component" (java/android/implicitly-exported-component) at path /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-926/ImplicitlyExportedAndroidComponent.bqrs.
+  Interpreted pathproblem query "URL forward from a remote source" (java/unvalidated-url-forward) at path /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-552/UrlForward.bqrs.
+  Interpreted problem query "Inefficient regular expression" (java/redos) at path /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-730/ReDoS.bqrs.
+  Interpreted pathproblem query "Polynomial regular expression used on uncontrolled data" (java/polynomial-redos) at path /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-730/PolynomialReDoS.bqrs.
+  Interpreted pathproblem query "Regular expression injection" (java/regex-injection) at path /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-730/RegexInjection.bqrs.
+  Interpreted pathproblem query "User-controlled data in numeric cast" (java/tainted-numeric-cast) at path /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-681/NumericCastTainted.bqrs.
+  Interpreted pathproblem query "Insecure Bean Validation" (java/insecure-bean-validation) at path /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-094/InsecureBeanValidation.bqrs.
+  Interpreted pathproblem query "Expression language injection (JEXL)" (java/jexl-expression-injection) at path /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-094/JexlInjection.bqrs.
+  Interpreted pathproblem query "Server-side template injection" (java/server-side-template-injection) at path /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-094/TemplateInjection.bqrs.
+  Interpreted pathproblem query "Expression language injection (Spring)" (java/spel-expression-injection) at path /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-094/SpelInjection.bqrs.
+  Interpreted pathproblem query "Expression language injection (MVEL)" (java/mvel-expression-injection) at path /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-094/MvelInjection.bqrs.
+  Interpreted pathproblem query "Groovy Language injection" (java/groovy-injection) at path /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-094/GroovyInjection.bqrs.
+  Interpreted pathproblem query "Intent URI permission manipulation" (java/android/intent-uri-permission-manipulation) at path /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-266/IntentUriPermissionManipulation.bqrs.
+  Interpreted pathproblem query "Deserialization of user-controlled data" (java/unsafe-deserialization) at path /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-502/UnsafeDeserialization.bqrs.
+  Interpreted problem query "Exposed Spring Boot actuators" (java/spring-boot-exposed-actuators) at path /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-200/SpringBootActuators.bqrs.
+  Interpreted problem query "Exposed Spring Boot actuators in configuration file" (java/spring-boot-exposed-actuators-config) at path /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-200/SpringBootActuatorsConfig/SpringBootActuatorsConfig.bqrs.
+  Interpreted problem query "Use of a predictable seed in a secure random number generator" (java/predictable-seed) at path /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-335/PredictableSeed.bqrs.
+  Interpreted pathproblem query "XSLT transformation with user-controlled stylesheet" (java/xslt-injection) at path /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-074/XsltInjection.bqrs.
+  Interpreted pathproblem query "JNDI lookup with user-controlled name" (java/jndi-injection) at path /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-074/JndiInjection.bqrs.
+  Interpreted pathproblem query "Partial path traversal vulnerability from remote" (java/partial-path-traversal-from-remote) at path /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-023/PartialPathTraversalFromRemote.bqrs.
+  Interpreted pathproblem query "Use of externally-controlled format string" (java/tainted-format-string) at path /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-134/ExternallyControlledFormatString.bqrs.
+  Interpreted pathproblem query "Use of a broken or risky cryptographic algorithm" (java/weak-cryptographic-algorithm) at path /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-327/BrokenCryptoAlgorithm.bqrs.
+  Interpreted pathproblem query "Server-side request forgery" (java/ssrf) at path /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-918/RequestForgery.bqrs.
+  Interpreted problem query "Improper verification of intent by broadcast receiver" (java/improper-intent-verification) at path /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-925/ImproperIntentVerification.bqrs.
+  Interpreted pathproblem query "User-controlled data used in permissions check" (java/tainted-permissions-check) at path /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-807/TaintedPermissionsCheck.bqrs.
+  Interpreted pathproblem query "Unsafe hostname verification" (java/unsafe-hostname-verification) at path /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-297/UnsafeHostnameVerification.bqrs.
+  Interpreted pathproblem query "LDAP query built from user-controlled sources" (java/ldap-injection) at path /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-090/LdapInjection.bqrs.
+  Interpreted pathproblem query "Using a static initialization vector for encryption" (java/static-initialization-vector) at path /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-1204/StaticInitializationVector.bqrs.
+  Interpreted problem query "Information exposure through an error message" (java/error-message-exposure) at path /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-209/SensitiveDataExposureThroughErrorMessage.bqrs.
+  Interpreted problem query "Information exposure through a stack trace" (java/stack-trace-exposure) at path /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-209/StackTraceExposure.bqrs.
+  Interpreted problem query "Depending upon JCenter/Bintray as an artifact repository" (java/maven/dependency-upon-bintray) at path /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-1104/MavenPomDependsOnBintray.bqrs.
+  Interpreted pathproblem query "Resolving XML external entity in user-controlled data" (java/xxe) at path /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Security/CWE/CWE-611/XXE.bqrs.
+  Interpreted problem query "Implicit narrowing conversion in compound assignment" (java/implicit-cast-in-compound-assignment) at path /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Likely Bugs/Arithmetic/InformationLoss.bqrs.
+  Interpreted diagnostic query "Extraction warnings" (java/diagnostics/extraction-warnings) at path /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Diagnostics/ExtractionWarnings.bqrs.
+  Interpreted diagnostic query "Extracted files" (java/diagnostics/successfully-extracted-files) at path /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Diagnostics/SuccessfullyExtractedFiles.bqrs.
+  Interpreted diagnostic query "Extraction errors" (java/diagnostics/extraction-errors) at path /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Diagnostics/ExtractionErrors.bqrs.
+  Interpreted diagnostic query "Low Java analysis quality" (java/diagnostic/database-quality) at path /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Telemetry/DatabaseQualityDiagnostics.bqrs.
+  Interpreted metric query "Total lines of Java code in the database" (java/summary/lines-of-code-java) at path /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Metrics/Summaries/LinesOfCodeJava.bqrs.
+  Interpreted metric query "Total lines of Kotlin code in the database" (java/summary/lines-of-code-kotlin) at path /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Metrics/Summaries/LinesOfCodeKotlin.bqrs.
+  Interpreted metric query "Total lines of Java/Kotlin code in the database" (java/summary/lines-of-code) at path /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Metrics/Summaries/LinesOfCode.bqrs.
+  Interpreted metric query "Supported flow steps in external libraries" (java/telemetry/supported-external-api-taint) at path /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Telemetry/SupportedExternalTaint.bqrs.
+  Interpreted metric query "Usage of supported APIs coming from external libraries" (java/telemetry/supported-external-api) at path /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Telemetry/SupportedExternalApis.bqrs.
+  Interpreted metric query "Usage of unsupported APIs coming from external libraries" (java/telemetry/unsupported-external-api) at path /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Telemetry/UnsupportedExternalAPIs.bqrs.
+  Interpreted metric query "External libraries" (java/telemetry/external-libs) at path /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Telemetry/ExternalLibraryUsage.bqrs.
+  Interpreted metric query "Java extraction information" (java/telemetry/extraction-information) at path /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Telemetry/ExtractorInformation.bqrs.
+  Interpreted metric query "Supported sinks in external libraries" (java/telemetry/supported-external-api-sinks) at path /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Telemetry/SupportedExternalSinks.bqrs.
+  Interpreted metric query "Supported sources in external libraries" (java/telemetry/supported-external-api-sources) at path /home/runner/work/_temp/codeql_databases/java/results/codeql/java-queries/Telemetry/SupportedExternalSources.bqrs.
+  Reading source archive /home/runner/work/_temp/codeql_databases/java/src.zip
+  Interpreting file coverage baseline information
+  Finished interpreting file coverage baseline information.
+  Interpreting diagnostic messages...
+  Found 3 raw diagnostic messages.
+  Processed diagnostic messages (removed 0 due to limits, created 0 summary diagnostics for status page).
+  Interpreted diagnostic messages (173ms).
+  Exporting results to SARIF...
+  Exported results to SARIF (312ms).
+CodeQL scanned 58 out of 66 Java files in this invocation. Check the status page for overall coverage information: https://github.com/cgu-se-dti/ogubr/security/code-scanning/tools/CodeQL/status/
+
+Post-processing sarif files: ["/home/runner/work/ogubr/results/java.sarif"]
+Adding fingerprints to SARIF file. See https://docs.github.com/en/enterprise-cloud@latest/code-security/code-scanning/integrating-with-code-scanning/sarif-support-for-code-scanning#providing-data-to-track-code-scanning-alerts-across-runs for more information.
+Uploading code scanning results
+  Uploading results
+  Successfully uploaded results
+Cleaning up databases
+  /opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/codeql database cleanup /home/runner/work/_temp/codeql_databases/java --cache-cleanup=clear
+  Cleaning up existing TRAP files after import...
+  TRAP files cleaned up (4ms).
+  Cleaning up scratch directory...
+  Scratch directory cleaned up (1ms).
+/opt/hostedtoolcache/CodeQL/2.23.3/x64/codeql/codeql database bundle /home/runner/work/_temp/codeql_databases/java --output=/home/runner/work/_temp/codeql_databases/java.zip --name=java
+Creating bundle metadata for /home/runner/work/_temp/codeql_databases/java...
+Creating zip file at /home/runner/work/_temp/codeql_databases/java.zip.
+Waiting for processing to finish
+  Analysis upload status is complete.
