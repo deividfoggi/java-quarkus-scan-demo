@@ -1,13 +1,12 @@
-name: X_ CodeQL Java (Quarkus)
+name: CodeQL Java (Quarkus)
 
 on:
   workflow_dispatch:
   push:
-    branches: [ "main" ]
+    branches: [ "main", "master" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "main", "master" ]
   schedule:
-    # Executa às 11:11 da manhã todo sábado
     - cron: '11 11 * * 6'
         
 jobs:
@@ -37,25 +36,9 @@ jobs:
         languages: java-kotlin
         build-mode: none
 
-    - name: Encontrar os módulos (platform)
-      id: modules
-      working-directory: eouv/platform
-      run: |
-        MODULES=$(find . -maxdepth 2 -name "pom.xml" -not -path "./target/*" -not -path "./*/target/*" | while read pom; do
-          dir=$(dirname "$pom" | sed 's|^\./||')
-          if [ "$dir" != "." ] && [ -f "$pom" ]; then
-            if grep -q "<artifactId>" "$pom"; then
-              echo "platform/$dir"
-            fi
-          fi
-        done | tr '\n' ',' | sed 's/,$//')
-        echo "modules=${MODULES}" >> $GITHUB_OUTPUT
-        echo "Discovered modules: ${MODULES}"
-
     - name: Build do projeto Quarkus
-      working-directory: 'eouv'
-      run: |
-        mvn clean install -DskipTests -pl ${{ steps.modules.outputs.modules }} -am -Dquarkus.package.type=fast-jar
+      working-directory: java_project
+      run: mvn clean compile -DskipTests
         
     - name: Executar a Análise do CodeQL
       uses: github/codeql-action/analyze@v3
