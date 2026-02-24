@@ -27,7 +27,7 @@ jobs:
       uses: actions/setup-java@v4
       with:
         distribution: 'temurin'
-        java-version: '21'
+        java-version: '25'
         cache: 'maven'
 
     - name: Inicializa o CodeQL
@@ -38,7 +38,8 @@ jobs:
 
     - name: Build do projeto Quarkus
       working-directory: java_project
-      run: mvn clean compile -DskipTests
+      #run: mvn clean compile -DskipTests
+      run: mvn package -am -Pnative
         
     - name: Executar a Análise do CodeQL
       uses: github/codeql-action/analyze@v3
